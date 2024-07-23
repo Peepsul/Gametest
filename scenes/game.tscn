@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://2pxqiheo8acp"]
+[gd_scene load_steps=17 format=3 uid="uid://2pxqiheo8acp"]
 
 [ext_resource type="PackedScene" uid="uid://goih4v00vq35" path="res://scenes/player.tscn" id="1_3uswh"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_w562l"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bsfesyemdmatr" path="res://scenes/killzone.tscn" id="5_at1li"]
 [ext_resource type="PackedScene" uid="uid://jm5jcnf44jm" path="res://scenes/slime.tscn" id="6_2x4in"]
 [ext_resource type="FontFile" uid="uid://cnxra4k2ol1g6" path="res://assets/fonts/PixelOperator8.ttf" id="7_i5g42"]
+[ext_resource type="PackedScene" uid="uid://c3c33r5yclv80" path="res://scenes/teleport_platform.tscn" id="10_cg7o0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_16dpf"]
 texture = ExtResource("2_yprpu")
@@ -541,14 +542,8 @@ libraries = {
 }
 autoplay = "Move"
 
-[node name="Slime" parent="." instance=ExtResource("6_2x4in")]
-position = Vector2(-56, 32)
-
-[node name="Slime2" parent="." instance=ExtResource("6_2x4in")]
-position = Vector2(600, 64)
-
-[node name="Slime3" parent="." instance=ExtResource("6_2x4in")]
-position = Vector2(936, 65)
+[node name="teleport_platform" parent="Platforms" instance=ExtResource("10_cg7o0")]
+position = Vector2(1216, 5)
 
 [node name="Labels" type="Node" parent="."]
 
@@ -590,3 +585,14 @@ text = "Good job!
 
 "
 autowrap_mode = 3
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Slime" parent="Enemies" instance=ExtResource("6_2x4in")]
+position = Vector2(-56, 32)
+
+[node name="Slime2" parent="Enemies" instance=ExtResource("6_2x4in")]
+position = Vector2(600, 64)
+
+[node name="Slime3" parent="Enemies" instance=ExtResource("6_2x4in")]
+position = Vector2(936, 65)

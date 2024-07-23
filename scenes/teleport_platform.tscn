@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3c33r5yclv80"]
+
+[ext_resource type="Texture2D" uid="uid://6gutp15gelg8" path="res://assets/sprites/platforms.png" id="1_akqge"]
+[ext_resource type="Script" path="res://scripts/teleport_platform.gd" id="1_l5pgw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyu83"]
+size = Vector2(32, 8)
+
+[node name="teleport_platform" type="AnimatableBody2D"]
+script = ExtResource("1_l5pgw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_akqge")
+region_enabled = true
+region_rect = Rect2(16, 48, 32, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qyu83")
